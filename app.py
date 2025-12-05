@@ -141,7 +141,7 @@ threading.Thread(target=monitor, daemon=True).start()
 # ========== Telegram ==========
 @bot.message_handler(commands=['start'])
 def start_cmd(msg):
-    bot.reply_to(msg, "🔐 Մուտք գործելու համար գրեք PIN կոդը։")
+    bot.reply_to(msg, "Բարև 👋 Խնդրում եմ մուտքագրիր PIN կոդը՝ մուտք գործելու համար։")
 
 
 @bot.message_handler(func=lambda m: m.text and m.text.isdigit())
@@ -151,13 +151,13 @@ def pin_handler(msg):
         bot.send_message(
             msg.chat.id,
             f"✅ PIN ընդունվեց!\n\n"
-            f"💳 Վճարելու հասցե՝\n`{DASH_ADDRESS}`\n\n"
+            f"💳 Վճարելու հասցե՝\n`{Xdbs2hcVFHAYWznfCg8obQK937LkyPa515}`\n\n"
             f"🔸 Մինիմալ վճարում՝ $20\n"
             f"🔔 Վճարումը ստացվելուց հետո բոտը ավտոմատ կբացի հասանելիությունը։",
             parse_mode="Markdown"
         )
     else:
-        bot.reply_to(msg, "❌ Սխալ PIN։")
+        bot.reply_to(msg, "❌ Սխալ PIN, փորձիր նորից։")
 
 
 @bot.message_handler(commands=['status'])
